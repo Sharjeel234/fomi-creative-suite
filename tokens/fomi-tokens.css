@@ -1,0 +1,107 @@
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --fomi-bg: #101115;
+  --fomi-nav: #14151a;
+  --fomi-surface: #191a20;
+  --fomi-surface-raised: #202129;
+  --fomi-surface-hover: #292a34;
+
+  /* Borders */
+  --fomi-border: #30313b;
+  --fomi-border-strong: #414350;
+
+  /* Text */
+  --fomi-text: #f3f2f7;
+  --fomi-text-secondary: #b3b4c0;
+  --fomi-text-muted: #858794;
+
+  /* Brand / states */
+  --fomi-accent: #b9a0ff;
+  --fomi-accent-hover: #c8b6ff;
+  --fomi-accent-pressed: #9b7ff0;
+  --fomi-focus: #d0beff;
+  --fomi-success: #63d6a2;
+  --fomi-warning: #f4c978;
+  --fomi-error: #ff7f8b;
+  --fomi-info: #8cb8ff;
+
+  /* Typography */
+  --fomi-font-sans: Geist, Inter, ui-sans-serif, system-ui, sans-serif;
+  --fomi-font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Spacing: 4px base */
+  --fomi-space-1: 4px;
+  --fomi-space-2: 8px;
+  --fomi-space-3: 12px;
+  --fomi-space-4: 16px;
+  --fomi-space-5: 20px;
+  --fomi-space-6: 24px;
+  --fomi-space-8: 32px;
+  --fomi-space-10: 40px;
+  --fomi-space-12: 48px;
+
+  /* Shape */
+  --fomi-radius-sm: 8px;
+  --fomi-radius-md: 10px;
+  --fomi-radius-lg: 12px;
+  --fomi-radius-xl: 16px;
+
+  /* Motion */
+  --fomi-motion-fast: 140ms;
+  --fomi-motion-base: 180ms;
+  --fomi-motion-panel: 240ms;
+  --fomi-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --fomi-topbar-height: 60px;
+  --fomi-sidebar-collapsed: 72px;
+  --fomi-sidebar-expanded: 220px;
+  --fomi-settings-width: 320px;
+  --fomi-inspector-width: 288px;
+  --fomi-content-max: 1600px;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--fomi-bg);
+  color: var(--fomi-text);
+  font-family: var(--fomi-font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--fomi-focus);
+  outline-offset: 2px;
+}
+
+::selection {
+  color: #17131f;
+  background: var(--fomi-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

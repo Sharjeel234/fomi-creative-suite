@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "note": "Asset plan only. Replace these planned filenames with locally stored licensed or purpose-generated assets before implementation.",
+  "assets": [
+    {
+      "file": "campaign-skincare-hero.webp",
+      "category": "product-campaign",
+      "ratio": "4:5",
+      "alt": "Luxury skincare bottle in a refined editorial studio setup",
+      "use": [
+        "generate",
+        "canvas"
+      ]
+    },
+    {
+      "file": "campaign-skincare-natural.webp",
+      "category": "variation",
+      "ratio": "4:5",
+      "alt": "Skincare bottle in warm natural light with botanical details",
+      "use": [
+        "generate",
+        "canvas"
+      ],
+      "parent": "campaign-skincare-hero.webp"
+    },
+    {
+      "file": "campaign-skincare-dramatic.webp",
+      "category": "variation",
+      "ratio": "4:5",
+      "alt": "Skincare bottle under dramatic low-key studio lighting",
+      "use": [
+        "generate",
+        "canvas"
+      ],
+      "parent": "campaign-skincare-hero.webp"
+    },
+    {
+      "file": "campaign-skincare-minimal.webp",
+      "category": "variation",
+      "ratio": "4:5",
+      "alt": "Minimal skincare bottle against a pale stone background",
+      "use": [
+        "generate",
+        "canvas"
+      ],
+      "parent": "campaign-skincare-hero.webp"
+    },
+    {
+      "file": "fashion-editorial.webp",
+      "category": "portrait",
+      "ratio": "4:5",
+      "alt": "Cinematic fashion editorial portrait",
+      "use": [
+        "generate"
+      ]
+    },
+    {
+      "file": "architectural-atmosphere.webp",
+      "category": "architecture",
+      "ratio": "3:2",
+      "alt": "Atmospheric architectural scene with directional light",
+      "use": [
+        "generate",
+        "canvas"
+      ]
+    },
+    {
+      "file": "surreal-object-study.webp",
+      "category": "surreal",
+      "ratio": "1:1",
+      "alt": "Surreal sculptural object study",
+      "use": [
+        "generate",
+        "canvas"
+      ]
+    },
+    {
+      "file": "video-preview-poster.webp",
+      "category": "video-poster",
+      "ratio": "16:9",
+      "alt": "Cinematic still used as a video preview poster",
+      "use": [
+        "generate"
+      ]
+    },
+    {
+      "file": "reference-board-01.webp",
+      "category": "moodboard",
+      "ratio": "3:2",
+      "alt": "Curated creative reference board with coordinated imagery",
+      "use": [
+        "canvas"
+      ]
+    },
+    {
+      "file": "empty-canvas-noise.webp",
+      "category": "texture",
+      "ratio": "16:9",
+      "alt": "",
+      "use": [
+        "canvas"
+      ],
+      "optional": true
+    }
+  ]
+}
