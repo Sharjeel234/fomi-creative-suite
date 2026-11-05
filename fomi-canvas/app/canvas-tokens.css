@@ -1,0 +1,108 @@
+:root {
+  /* ==========================================
+       FOMI CANVAS — SEMANTIC DESIGN TOKENS
+       Inherits the shared Fomi design system
+       ========================================== */
+
+  /* ------------------------------------------
+       Surfaces
+    ------------------------------------------ */
+
+  --canvas-bg: var(--fomi-bg, #101115);
+  --canvas-surface: var(--fomi-nav, #14151a);
+  --canvas-surface-raised: var(--fomi-surface-raised, #202129);
+  --canvas-surface-hover: var(--fomi-surface-hover, #292a34);
+
+  /* ------------------------------------------
+       Borders
+    ------------------------------------------ */
+
+  --canvas-border: var(--fomi-border, #30313b);
+  --canvas-border-strong: var(--fomi-border-strong, #414350);
+
+  /* ------------------------------------------
+       Typography
+    ------------------------------------------ */
+
+  --canvas-text: var(--fomi-text, #f3f2f7);
+  --canvas-text-secondary: var(--fomi-text-secondary, #b3b4c0);
+  --canvas-text-muted: var(--fomi-text-muted, #858794);
+
+  --canvas-font-sans:
+    var(--font-geist-sans),
+    Arial,
+    sans-serif;
+
+  --canvas-font-mono:
+    var(--font-geist-mono),
+    monospace;
+
+  /* ------------------------------------------
+       Brand
+    ------------------------------------------ */
+
+  --canvas-accent: var(--fomi-accent, #b9a0ff);
+  --canvas-accent-hover: var(--fomi-accent-hover, #c8b6ff);
+  --canvas-accent-pressed: var(--fomi-accent-pressed, #a98aef);
+  --canvas-focus: var(--fomi-focus, #d0beff);
+
+  /* ------------------------------------------
+       Semantic States
+    ------------------------------------------ */
+
+  --canvas-success: var(--fomi-success, #63d6a2);
+  --canvas-warning: var(--fomi-warning, #ffc86b);
+  --canvas-danger: var(--fomi-error, #ff7f8b);
+  --canvas-info: var(--fomi-info, #8ebdff);
+
+  /* ------------------------------------------
+       Canvas-Specific Effects
+    ------------------------------------------ */
+
+  --canvas-accent-soft: rgb(185 160 255 / 12%);
+  --canvas-accent-border: rgb(185 160 255 / 38%);
+  --canvas-grid-dot: rgb(179 180 192 / 18%);
+  --canvas-selection-glow:
+    0 0 0 4px rgb(185 160 255 / 12%);
+
+  /* ------------------------------------------
+       Workspace Layout
+    ------------------------------------------ */
+
+  --canvas-topbar-height: 64px;
+  --canvas-sidebar-width:
+    var(--fomi-sidebar-collapsed, 72px);
+  --canvas-inspector-width: 320px;
+
+  /* ------------------------------------------
+       Shape
+    ------------------------------------------ */
+
+  --canvas-radius-sm: var(--fomi-radius-sm, 6px);
+  --canvas-radius-md: var(--fomi-radius-md, 10px);
+  --canvas-radius-lg: var(--fomi-radius-lg, 14px);
+  --canvas-radius-xl: 22px;
+
+  /* ------------------------------------------
+       Motion
+    ------------------------------------------ */
+
+  --canvas-duration-fast:
+    var(--fomi-motion-fast, 150ms);
+
+  --canvas-duration-normal:
+    var(--fomi-motion-panel, 240ms);
+
+  --canvas-ease:
+    var(--fomi-ease-out, cubic-bezier(0.22, 1, 0.36, 1));
+
+  /* ------------------------------------------
+       Canvas Interaction Settings
+    ------------------------------------------ */
+
+  --canvas-node-width: 280px;
+  --canvas-node-gap: 48px;
+
+  --canvas-zoom-min: 0.4;
+  --canvas-zoom-max: 2;
+}

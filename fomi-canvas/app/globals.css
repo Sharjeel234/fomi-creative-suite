@@ -1,0 +1,275 @@
+@import "tailwindcss";
+@import "./fomi-tokens.css";
+@import "./canvas-tokens.css";
+
+/* --------------------------------------------------
+   Tailwind Theme
+-------------------------------------------------- */
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* --------------------------------------------------
+   Global Reset
+-------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--canvas-bg);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--canvas-bg);
+  color: var(--canvas-text);
+  font-family:
+    var(--font-geist-sans),
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: var(--canvas-accent);
+  color: var(--canvas-bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--canvas-focus, var(--canvas-accent));
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------
+   Workspace Shell
+-------------------------------------------------- */
+
+.canvas-shell {
+  display: grid;
+  grid-template-rows:
+    var(--canvas-topbar-height) minmax(0, 1fr);
+  height: 100dvh;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.canvas-main {
+  display: grid;
+  grid-template-columns:
+    var(--canvas-sidebar-width) minmax(0, 1fr) var(--canvas-inspector-width);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------
+   Topbar
+-------------------------------------------------- */
+
+.canvas-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--canvas-border);
+  background: var(--canvas-surface);
+}
+
+/* --------------------------------------------------
+   Sidebar
+-------------------------------------------------- */
+
+.canvas-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 0;
+  padding: 20px 12px;
+  border-right: 1px solid var(--canvas-border);
+  background: var(--canvas-surface);
+}
+
+/* --------------------------------------------------
+   Canvas Board
+-------------------------------------------------- */
+
+.canvas-board {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+  touch-action: none;
+
+  background-color: var(--canvas-bg);
+  background-image: radial-gradient(var(--canvas-grid-dot) 0.8px,
+      transparent 0.8px);
+  background-size: 24px 24px;
+}
+
+/* --------------------------------------------------
+   Inspector
+-------------------------------------------------- */
+
+.canvas-inspector {
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-left: 1px solid var(--canvas-border);
+  background: var(--canvas-surface);
+}
+
+/* --------------------------------------------------
+   Sidebar Buttons
+-------------------------------------------------- */
+
+.canvas-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: var(--canvas-radius-md);
+  color: var(--canvas-text-secondary);
+  background: transparent;
+
+  transition:
+    background-color var(--canvas-duration-fast),
+    color var(--canvas-duration-fast),
+    border-color var(--canvas-duration-fast);
+}
+
+.canvas-icon-button:hover:not(:disabled) {
+  color: var(--canvas-text);
+  background: var(--canvas-surface-hover);
+}
+
+.canvas-icon-button:focus-visible {
+  outline: 2px solid var(--canvas-focus, var(--canvas-accent));
+  outline-offset: 3px;
+}
+
+.canvas-icon-button[data-active="true"] {
+  color: var(--canvas-accent);
+  border-color: var(--canvas-accent-border);
+  background: var(--canvas-accent-soft);
+}
+
+.canvas-icon-button:disabled {
+  opacity: 0.55;
+}
+
+/* --------------------------------------------------
+   Responsive Layout
+-------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  :root {
+    --canvas-inspector-width: 280px;
+  }
+}
+
+@media (max-width: 900px) {
+  .canvas-main {
+    grid-template-columns:
+      var(--canvas-sidebar-width) minmax(0, 1fr);
+  }
+
+  .canvas-inspector {
+    position: fixed;
+    top: var(--canvas-topbar-height);
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+
+    width: min(340px, calc(100vw - var(--canvas-sidebar-width)));
+    border-left: 1px solid var(--canvas-border-strong);
+    box-shadow: -16px 0 48px rgb(0 0 0 / 30%);
+
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      transform 220ms ease,
+      visibility 220ms ease;
+  }
+
+  .canvas-inspector[data-open="true"] {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --canvas-topbar-height: 60px;
+    --canvas-sidebar-width: 56px;
+  }
+
+  .canvas-topbar {
+    gap: 10px;
+    padding: 0 14px;
+  }
+
+  .canvas-sidebar {
+    gap: 10px;
+    padding: 14px 8px;
+  }
+
+  .canvas-icon-button {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* --------------------------------------------------
+   Reduced Motion
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
